@@ -5,7 +5,6 @@ resource "aws_route53_record" "domain_amazonses_verification_record" {
   type        = "TXT"
   ttl         = "3600"
   records     = ["${aws_ses_domain_identity.domain.verification_token}", "${var.ses_records}"]
-  depends_on  = [${var.depends_on}]
 }
 
 resource "aws_route53_record" "domain_amazonses_dkim_record" {
@@ -15,5 +14,4 @@ resource "aws_route53_record" "domain_amazonses_dkim_record" {
   type       = "CNAME"
   ttl        = "3600"
   records    = ["${element(values(var.dkim_records), count.index)}"]
-  depends_on = [${var.depends_on}]
 }
