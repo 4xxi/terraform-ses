@@ -20,5 +20,6 @@ variable "ses_records" {
 
 variable "depends_on" {
   description = "depends_on"
+  type = "list"
   default = []
 }
