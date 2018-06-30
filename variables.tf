@@ -17,3 +17,8 @@ variable "ses_records" {
   description = "Additional entries which are added to the _amazonses record"
   default = []
 }
+
+variable "depends_on" {
+  description = "depends_on"
+  default = []
+}
